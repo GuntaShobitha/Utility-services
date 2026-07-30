@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login — STACKLY</title>
+<meta name="description" content="Log in to your STACKLY account to access dashboards, reports and services.">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/enhance.css">
+</head>
+<body>
+<div class="page-loader" id="pageLoader"><div class="loader-ring"></div></div>
+<div class="auth">
+  <aside class="auth-side">
+    <div class="auth-illus"><img src="images/auth-illustration.webp" alt="" loading="lazy"></div>
+    <span class="auth-shape a"></span><span class="auth-shape b"></span>
+    <div class="brand"><a href="index.html"><img src="images/logo-dark.webp" alt="STACKLY Logo"></a></div>
+    <div class="quote reveal-left in"><h2>"Cleaner cities start with better data."</h2><p>— The STACKLY Team</p></div>
+  </aside>
+  <main class="auth-main">
+    <div class="top"><a href="index.html" class="nav-logo"><img src="images/logo-dark.webp" alt="STACKLY Logo"></a><a href="index.html"><span class="material-icons-outlined" style="font-size:1rem;vertical-align:middle">arrow_back</span> Back to home</a></div>
+    <div class="auth-box reveal-zoom in">
+      <h1>Welcome back.</h1>
+      <p class="sub">Log in to access your dashboard.</p>
+      <form id="loginForm" class="form-grid">
+        <div class="field">
+          <label>Select your role</label>
+          <input type="hidden" id="loginRole" name="role" value="user">
+          <div class="role-cards" role="radiogroup" aria-label="Role">
+            <div class="role-card user active" data-role="user" role="radio" aria-checked="true" tabindex="0">
+              <span class="r-check material-icons-outlined">check</span>
+              <div class="r-ic"><span class="material-icons-outlined">person</span></div>
+              <div class="r-title">User</div>
+              <div class="r-sub">Access your dashboard and services</div>
+            </div>
+            <div class="role-card admin" data-role="admin" role="radio" aria-checked="false" tabindex="0">
+              <span class="r-check material-icons-outlined">check</span>
+              <div class="r-ic"><span class="material-icons-outlined">shield</span></div>
+              <div class="r-title">Admin</div>
+              <div class="r-sub">Manage operations and reports</div>
+            </div>
+          </div>
+        </div>
+        <div class="field"><label>Email</label><input type="text" id="loginEmail" placeholder="you@company.com" required><span class="auth-error">Please enter a valid email (must contain @ and .com).</span></div>
+        <div class="field"><label>Password</label><input type="password" placeholder="••••••••" required></div>
+        <div class="auth-actions">
+          <label style="display:flex;align-items:center;gap:8px;font-weight:500;color:var(--c-muted)"><input type="checkbox"> Remember me</label>
+          <a href="404.html">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary" style="justify-content:center">Login <span class="material-icons-outlined">login</span></button>
+        <a href="register.html" class="btn btn-ghost" style="justify-content:center">Create Account</a>
+      </form>
+      <p class="auth-alt">Don't have an account? <a href="register.html">Register</a></p>
+    </div>
+  </main>
+</div>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/enhance.js" defer></script>
+</body>
+</html>

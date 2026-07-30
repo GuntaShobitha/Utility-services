@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analytics — STACKLY</title>
+  <meta name="description" content="Interactive analytics.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/enhance.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+</head>
+
+<body data-role="admin" data-active="analytics">
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-ring"></div>
+  </div>
+  <div class="dash">
+    <aside class="dash-side" id="dashSidebar"></aside>
+    <main class="dash-main">
+      <div class="dash-topbar" id="dashTopbar"></div>
+
+      <div class="dash-head" data-aos="fade-up">
+        <h1>Analytics</h1>
+        <p>Interactive charts and month-over-month performance.</p>
+      </div>
+
+      <div class="widgets">
+        <div class="widget">
+          <div class="top">
+            <div class="ic"><span class="material-icons-outlined">trending_up</span></div><span
+              class="trend">+18%</span>
+          </div>
+          <div class="num" data-count="482" data-prefix="$" data-suffix="k">0</div>
+          <div class="lbl">MRR</div>
+        </div>
+        <div class="widget">
+          <div class="top">
+            <div class="ic"><span class="material-icons-outlined">groups</span></div><span class="trend">+6%</span>
+          </div>
+          <div class="num" data-count="1284">0</div>
+          <div class="lbl">Active users</div>
+        </div>
+        <div class="widget">
+          <div class="top">
+            <div class="ic"><span class="material-icons-outlined">bar_chart</span></div><span class="trend">+11%</span>
+          </div>
+          <div class="num" data-count="96" data-suffix="%">0</div>
+          <div class="lbl">Retention</div>
+        </div>
+        <div class="widget">
+          <div class="top">
+            <div class="ic"><span class="material-icons-outlined">speed</span></div><span class="trend down">-4%</span>
+          </div>
+          <div class="num" data-count="1.8" data-suffix="s">0</div>
+          <div class="lbl">Avg load time</div>
+        </div>
+      </div>
+
+      <div class="dash-row">
+        <div class="panel">
+          <h3>Monthly performance</h3>
+          <div class="chart-wrap tall"><canvas
+              data-chart='{"type":"bar","data":{"labels":["Jan","Feb","Mar","Apr","May","Jun","Jul"],"datasets":[{"label":"Signups","data":[42,58,72,68,94,108,124],"backgroundColor":"rgba(31,122,76,.75)","borderRadius":6},{"label":"Churn","data":[8,10,7,12,9,6,5],"backgroundColor":"rgba(231,76,60,.55)","borderRadius":6}]},"options":{"maintainAspectRatio":false}}'></canvas>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Revenue growth</h3>
+          <div class="chart-wrap tall"><canvas
+              data-chart='{"type":"line","data":{"labels":["Jan","Feb","Mar","Apr","May","Jun","Jul"],"datasets":[{"label":"Revenue","data":[210,260,310,290,380,430,482],"borderColor":"#1f7a4c","backgroundColor":"rgba(142,211,107,.28)","tension":.4,"fill":true,"pointRadius":5,"pointBackgroundColor":"#1f7a4c"}]},"options":{"plugins":{"legend":{"display":false}},"maintainAspectRatio":false}}'></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-row-2">
+        <div class="panel">
+          <h3>Revenue by plan</h3>
+          <div class="chart-wrap"><canvas
+              data-chart='{"type":"pie","data":{"labels":["Starter","Growth","Enterprise"],"datasets":[{"data":[18,42,40],"backgroundColor":["#c8d8bf","#8ed36b","#1f7a4c"],"borderWidth":0}]},"options":{"plugins":{"legend":{"position":"bottom"}},"maintainAspectRatio":false}}'></canvas>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Key performance indicators</h3>
+          <div class="kpi-grid">
+            <div class="kpi">
+              <div class="lbl">ARPU</div>
+              <div class="val" data-count="376" data-prefix="$">0</div>
+            </div>
+            <div class="kpi">
+              <div class="lbl">Conversion</div>
+              <div class="val" data-count="4.2" data-suffix="%">0</div>
+            </div>
+            <div class="kpi">
+              <div class="lbl">LTV</div>
+              <div class="val" data-count="9840" data-prefix="$">0</div>
+            </div>
+            <div class="kpi">
+              <div class="lbl">CAC</div>
+              <div class="val" data-count="284" data-prefix="$">0</div>
+            </div>
+            <div class="kpi">
+              <div class="lbl">NPS</div>
+              <div class="val" data-count="62">0</div>
+            </div>
+            <div class="kpi">
+              <div class="lbl">Uptime</div>
+              <div class="val" data-count="99.98" data-suffix="%">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Reports — STACKLY</title>
+  <meta name="description" content="Company-wide reports.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/enhance.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+</head>
+
+<body data-role="admin" data-active="reports">
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-ring"></div>
+  </div>
+  <div class="dash">
+    <aside class="dash-side" id="dashSidebar"></aside>
+    <main class="dash-main">
+      <div class="dash-topbar" id="dashTopbar"></div>
+
+      <div class="dash-head" data-aos="fade-up">
+        <h1>Reports</h1>
+        <p>Company-wide performance, financial and operational reports.</p>
+      </div>
+
+      <div class="widgets">
+        <div class="widget">
+          <div class="top">
+            <div class="ic"><span class="material-icons-outlined">description</span></div>
+          </div>
+          <div class="num" data-count="342">0</div>
+          <div class="lbl">Reports generated</div>
+        </div>
+        <div class="widget">
+          <div class="top">
+            <div class="ic"><span class="material-icons-outlined">download</span></div>
+          </div>
+          <div class="num" data-count="1820">0</div>
+          <div class="lbl">Total downloads</div>
+        </div>
+        <div class="widget">
+          <div class="top">
+            <div class="ic"><span class="material-icons-outlined">schedule_send</span></div>
+          </div>
+          <div class="num" data-count="24">0</div>
+          <div class="lbl">Scheduled</div>
+        </div>
+        <div class="widget">
+          <div class="top">
+            <div class="ic"><span class="material-icons-outlined">groups</span></div>
+          </div>
+          <div class="num" data-count="86">0</div>
+          <div class="lbl">Distribution list</div>
+        </div>
+      </div>
+
+      <div class="dash-row">
+        <div class="panel">
+          <h3>Report downloads (last 6 months)</h3>
+          <div class="chart-wrap tall"><canvas
+              data-chart='{"type":"bar","data":{"labels":["Feb","Mar","Apr","May","Jun","Jul"],"datasets":[{"label":"Downloads","data":[220,260,340,380,420,482],"backgroundColor":"rgba(31,122,76,.75)","borderRadius":8}]},"options":{"plugins":{"legend":{"display":false}},"maintainAspectRatio":false}}'></canvas>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Report categories</h3>
+          <div class="chart-wrap tall"><canvas
+              data-chart='{"type":"doughnut","data":{"labels":["ESG","Financial","Operations","Custom"],"datasets":[{"data":[38,26,22,14],"backgroundColor":["#1f7a4c","#8ed36b","#c8d8bf","#e7a94c"],"borderWidth":0}]},"options":{"plugins":{"legend":{"position":"bottom"}},"cutout":"65%","maintainAspectRatio":false}}'></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:20px">
+        <h3>Latest monthly reports</h3>
+        <div class="dl-grid">
+          <div class="dl-card">
+            <div class="ic"><span class="material-icons-outlined">picture_as_pdf</span></div><b>July 2026 · Company
+              ESG</b><span>2.8 MB · PDF</span><a href="404.html">Download</a>
+          </div>
+          <div class="dl-card">
+            <div class="ic"><span class="material-icons-outlined">picture_as_pdf</span></div><b>July 2026 ·
+              Financials</b><span>1.6 MB · PDF</span><a href="404.html">Download</a>
+          </div>
+          <div class="dl-card">
+            <div class="ic"><span class="material-icons-outlined">table_chart</span></div><b>Q2 · Full CSV
+              export</b><span>4.2 MB · CSV</span><a href="404.html">Download</a>
+          </div>
+          <div class="dl-card">
+            <div class="ic"><span class="material-icons-outlined">insert_chart</span></div><b>H1 · KPI pack</b><span>3.1
+              MB · XLSX</span><a href="404.html">Download</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>

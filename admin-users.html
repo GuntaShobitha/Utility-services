@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manage Users — STACKLY</title>
+  <meta name="description" content="Search and manage all STACKLY users.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/enhance.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+</head>
+
+<body data-role="admin" data-active="users">
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-ring"></div>
+  </div>
+  <div class="dash">
+    <aside class="dash-side" id="dashSidebar"></aside>
+    <main class="dash-main">
+      <div class="dash-topbar" id="dashTopbar"></div>
+
+      <div class="dash-head" data-aos="fade-up">
+        <h1>Manage users</h1>
+        <p>Search, filter and manage all user accounts.</p>
+      </div>
+
+      <div class="widgets">
+        <div class="widget">
+          <div class="top">
+            <div class="ic"><span class="material-icons-outlined">group</span></div>
+          </div>
+          <div class="num" data-count="1284">0</div>
+          <div class="lbl">Total users</div>
+        </div>
+        <div class="widget">
+          <div class="top">
+            <div class="ic"><span class="material-icons-outlined">check_circle</span></div>
+          </div>
+          <div class="num" data-count="1198">0</div>
+          <div class="lbl">Active</div>
+        </div>
+        <div class="widget">
+          <div class="top">
+            <div class="ic"><span class="material-icons-outlined">schedule</span></div>
+          </div>
+          <div class="num" data-count="62">0</div>
+          <div class="lbl">Pending</div>
+        </div>
+        <div class="widget">
+          <div class="top">
+            <div class="ic"><span class="material-icons-outlined">block</span></div>
+          </div>
+          <div class="num" data-count="24">0</div>
+          <div class="lbl">Suspended</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="tbl-filters">
+          <div class="search"><span class="material-icons-outlined">search</span><input
+              placeholder="Search users by name or email..."></div>
+          <select>
+            <option>All roles</option>
+            <option>Admin</option>
+            <option>User</option>
+            <option>Manager</option>
+          </select>
+          <select>
+            <option>All statuses</option>
+            <option>Active</option>
+            <option>Pending</option>
+            <option>Suspended</option>
+          </select>
+          <button class="btn btn-primary" style="padding:10px 18px" onclick="window.location.href='404.html'">Add user <span
+              class="material-icons-outlined">person_add</span></button>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div class="av sm">M</div>
+                  <div><b style="display:block">Maria Chen</b><span
+                      style="font-size:.78rem;color:var(--c-muted)">maria@vertex.com</span></div>
+                </div>
+              </td>
+              <td>Manager</td>
+              <td><span class="badge-s ok">Active</span></td>
+              <td><button class="icon-btn" title="Edit"><span
+                    class="material-icons-outlined" onclick="window.location.href='404.html'">edit</span></button><button class="icon-btn" title="Delete"><span
+                    class="material-icons-outlined" onclick="window.location.href='404.html'">delete</span></button></td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div class="av sm">D</div>
+                  <div><b style="display:block">Daniel Voss</b><span
+                      style="font-size:.78rem;color:var(--c-muted)">daniel@nordex.com</span></div>
+                </div>
+              </td>
+              <td>User</td>
+              <td><span class="badge-s ok">Active</span></td>
+              <td><button class="icon-btn" title="Edit"><span
+                    class="material-icons-outlined" onclick="window.location.href='404.html'">edit</span></button><button class="icon-btn" title="Delete"><span
+                    class="material-icons-outlined" onclick="window.location.href='404.html'">delete</span></button></td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div class="av sm">P</div>
+                  <div><b style="display:block">Priya Patel</b><span
+                      style="font-size:.78rem;color:var(--c-muted)">priya@hexa.io</span></div>
+                </div>
+              </td>
+              <td>Admin</td>
+              <td><span class="badge-s ok">Active</span></td>
+              <td><button class="icon-btn" title="Edit"><span
+                    class="material-icons-outlined" onclick="window.location.href='404.html'">edit</span></button><button class="icon-btn" title="Delete"><span
+                    class="material-icons-outlined" onclick="window.location.href='404.html'">delete</span></button></td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div class="av sm">K</div>
+                  <div><b style="display:block">Kenji Nakamura</b><span
+                      style="font-size:.78rem;color:var(--c-muted)">kenji@bionorth.com</span></div>
+                </div>
+              </td>
+              <td>User</td>
+              <td><span class="badge-s warn">Pending</span></td>
+              <td><button class="icon-btn" title="Edit"><span
+                    class="material-icons-outlined" onclick="window.location.href='404.html'">edit</span></button><button class="icon-btn" title="Delete"><span
+                    class="material-icons-outlined" onclick="window.location.href='404.html'">delete</span></button></td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div class="av sm">A</div>
+                  <div><b style="display:block">Amelia Rios</b><span
+                      style="font-size:.78rem;color:var(--c-muted)">amelia@vertex.com</span></div>
+                </div>
+              </td>
+              <td>User</td>
+              <td><span class="badge-s ok">Active</span></td>
+              <td><button class="icon-btn" title="Edit"><span
+                    class="material-icons-outlined" onclick="window.location.href='404.html'">edit</span></button><button class="icon-btn" title="Delete"><span
+                    class="material-icons-outlined" onclick="window.location.href='404.html'">delete</span></button></td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div class="av sm">L</div>
+                  <div><b style="display:block">Lucas Meier</b><span
+                      style="font-size:.78rem;color:var(--c-muted)">lucas@nordex.com</span></div>
+                </div>
+              </td>
+              <td>Manager</td>
+              <td><span class="badge-s err">Suspended</span></td>
+              <td><button class="icon-btn" title="Edit"><span
+                    class="material-icons-outlined" onclick="window.location.href='404.html'">edit</span></button><button class="icon-btn" title="Delete"><span
+                    class="material-icons-outlined" onclick="window.location.href='404.html'">delete</span></button></td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div class="av sm">Z</div>
+                  <div><b style="display:block">Zara Hussein</b><span
+                      style="font-size:.78rem;color:var(--c-muted)">zara@hexa.io</span></div>
+                </div>
+              </td>
+              <td>User</td>
+              <td><span class="badge-s ok">Active</span></td>
+              <td><button class="icon-btn" title="Edit"><span
+                    class="material-icons-outlined" onclick="window.location.href='404.html'">edit</span></button><button class="icon-btn" title="Delete"><span
+                    class="material-icons-outlined" onclick="window.location.href='404.html'">delete</span></button></td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div class="av sm">T</div>
+                  <div><b style="display:block">Tom Blake</b><span
+                      style="font-size:.78rem;color:var(--c-muted)">tom@bionorth.com</span></div>
+                </div>
+              </td>
+              <td>User</td>
+              <td><span class="badge-s warn">Pending</span></td>
+              <td><button class="icon-btn" title="Edit"><span
+                    class="material-icons-outlined" onclick="window.location.href='404.html'">edit</span></button><button class="icon-btn" title="Delete"><span
+                    class="material-icons-outlined" onclick="window.location.href='404.html'">delete</span></button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>

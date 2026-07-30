@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reports — STACKLY</title>
+<meta name="description" content="Your STACKLY reports and analytics.">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/enhance.css">
+<link rel="stylesheet" href="assets/css/dashboard.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+</head>
+<body data-role="user" data-active="reports">
+<div class="page-loader" id="pageLoader"><div class="loader-ring"></div></div>
+<div class="dash">
+  <aside class="dash-side" id="dashSidebar"></aside>
+  <main class="dash-main">
+    <div class="dash-topbar" id="dashTopbar"></div>
+
+    <div class="dash-head" data-aos="fade-up"><h1>Reports & analytics</h1><p>Monthly summaries, downloadable data and key indicators.</p></div>
+
+    <div class="widgets">
+      <div class="widget"><div class="top"><div class="ic"><span class="material-icons-outlined">description</span></div></div><div class="num" data-count="24">0</div><div class="lbl">Reports generated</div></div>
+      <div class="widget"><div class="top"><div class="ic"><span class="material-icons-outlined">download</span></div></div><div class="num" data-count="182">0</div><div class="lbl">Downloads YTD</div></div>
+      <div class="widget"><div class="top"><div class="ic"><span class="material-icons-outlined">trending_up</span></div></div><div class="num" data-count="18" data-suffix="%">0</div><div class="lbl">Efficiency gain</div></div>
+      <div class="widget"><div class="top"><div class="ic"><span class="material-icons-outlined">leaderboard</span></div></div><div class="num" data-count="4.8">0</div><div class="lbl">ESG score</div></div>
+    </div>
+
+    <div class="dash-row">
+      <div class="panel">
+        <h3>Monthly diversion trend</h3>
+        <div class="chart-wrap tall"><canvas data-chart='{"type":"bar","data":{"labels":["Jan","Feb","Mar","Apr","May","Jun","Jul"],"datasets":[{"label":"Diverted (T)","data":[12,15,18,22,26,29,34],"backgroundColor":"rgba(31,122,76,.7)","borderRadius":8}]},"options":{"plugins":{"legend":{"display":false}},"scales":{"y":{"beginAtZero":true,"grid":{"color":"rgba(0,0,0,.05)"}},"x":{"grid":{"display":false}}},"maintainAspectRatio":false}}'></canvas></div>
+      </div>
+      <div class="panel">
+        <h3>Waste stream mix</h3>
+        <div class="chart-wrap tall"><canvas data-chart='{"type":"doughnut","data":{"labels":["Recyclables","Organics","General","Hazardous"],"datasets":[{"data":[46,24,22,8],"backgroundColor":["#1f7a4c","#8ed36b","#c8d8bf","#e7a94c"],"borderWidth":0}]},"options":{"plugins":{"legend":{"position":"bottom"}},"cutout":"65%","maintainAspectRatio":false}}'></canvas></div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:20px">
+      <h3>Monthly reports</h3>
+      <div class="dl-grid">
+        <div class="dl-card"><div class="ic"><span class="material-icons-outlined">picture_as_pdf</span></div><b>July 2026 · ESG Summary</b><span>1.4 MB · PDF</span><a href="#">Download <span class="material-icons-outlined" style="font-size:1rem">download</span></a></div>
+        <div class="dl-card"><div class="ic"><span class="material-icons-outlined">picture_as_pdf</span></div><b>June 2026 · ESG Summary</b><span>1.2 MB · PDF</span><a href="#">Download <span class="material-icons-outlined" style="font-size:1rem">download</span></a></div>
+        <div class="dl-card"><div class="ic"><span class="material-icons-outlined">table_chart</span></div><b>Q2 2026 · Pickup data</b><span>820 KB · CSV</span><a href="#">Download <span class="material-icons-outlined" style="font-size:1rem">download</span></a></div>
+        <div class="dl-card"><div class="ic"><span class="material-icons-outlined">insert_chart</span></div><b>H1 2026 · KPI pack</b><span>2.1 MB · XLSX</span><a href="#">Download <span class="material-icons-outlined" style="font-size:1rem">download</span></a></div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:20px">
+      <h3>Key performance indicators</h3>
+      <div class="kpi-grid">
+        <div class="kpi"><div class="lbl">Diversion rate</div><div class="val" data-count="82" data-suffix="%">0</div></div>
+        <div class="kpi"><div class="lbl">Contamination</div><div class="val" data-count="3.2" data-suffix="%">0</div></div>
+        <div class="kpi"><div class="lbl">Pickup on-time</div><div class="val" data-count="96" data-suffix="%">0</div></div>
+        <div class="kpi"><div class="lbl">Cost per ton</div><div class="val" data-count="184" data-prefix="$">0</div></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+<script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="assets/js/dashboard.js"></script>
+</body>
+</html>

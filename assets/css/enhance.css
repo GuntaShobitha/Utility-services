@@ -1,0 +1,624 @@
+/* ========== Premium Hero Enhancement ========== */
+/* Compact inner-page hero: ~45-50vh, content vertically centred. */
+.page-hero{
+  min-height:48vh;
+  padding:calc(var(--nav-h,80px) + 32px) 0 48px !important;
+  display:flex;
+  align-items:center;
+  isolation:isolate;
+}
+.page-hero .hero-bg{
+  position:absolute;inset:0;z-index:-2;
+  background-size:cover;background-position:center;
+  transform:scale(1.15);
+  animation:heroZoom 22s ease-in-out infinite alternate;
+  will-change:transform;
+}
+.page-hero .hero-overlay{
+  position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(135deg,rgba(6,20,15,.82) 0%,rgba(10,40,25,.72) 55%,rgba(6,20,15,.85) 100%);
+  backdrop-filter:blur(2px);
+}
+.page-hero .hero-glass{
+  position:relative;display:inline-block;padding:14px 34px;border-radius:24px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+  backdrop-filter:blur(14px) saturate(140%);
+  box-shadow:0 20px 60px -20px rgba(0,0,0,.5);
+}
+@keyframes heroZoom{
+  0%  {transform:scale(1.12) translate(0,0)}
+  100%{transform:scale(1.22) translate(-2%,-2%)}
+}
+
+/* Decorative floating shapes removed — cleaner, minimal hero. */
+.page-hero .deco{display:none !important}
+
+/* Floating particles (home hero only) */
+.page-hero .particles{display:none !important}
+.particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+.particles i{position:absolute;bottom:-20px;display:block;width:6px;height:6px;border-radius:50%;
+  background:rgba(142,211,107,.55);box-shadow:0 0 12px rgba(142,211,107,.6);
+  animation:rise linear infinite}
+@keyframes rise{
+  0%{transform:translateY(0) scale(1);opacity:0}
+  10%{opacity:1}
+  100%{transform:translateY(-110vh) scale(.4);opacity:0}
+}
+
+/* Animated split-text title */
+.split-title{display:inline-block;overflow:hidden}
+.split-title .w{display:inline-block;transform:translateY(110%);opacity:0;animation:wordUp .9s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes wordUp{to{transform:translateY(0);opacity:1}}
+
+/* Scroll indicator */
+.scroll-indicator{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);color:#fff;opacity:.7;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2}
+.scroll-indicator .mouse{width:22px;height:36px;border:2px solid rgba(255,255,255,.65);border-radius:14px;position:relative}
+.scroll-indicator .mouse::before{content:"";position:absolute;left:50%;top:6px;transform:translateX(-50%);width:3px;height:8px;background:#fff;border-radius:2px;animation:scrollDot 1.6s ease-in-out infinite}
+@keyframes scrollDot{0%,100%{opacity:0;transform:translate(-50%,0)}50%{opacity:1;transform:translate(-50%,10px)}}
+
+/* Parallax layer */
+.page-hero[data-parallax]{perspective:1000px}
+
+/* ========== Premium Role Cards (Login) ========== */
+.role-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+@media (max-width:520px){.role-cards{grid-template-columns:1fr}}
+.role-card{
+  --glow:142,211,107;
+  position:relative;cursor:pointer;padding:22px 20px;border-radius:20px;
+  background:linear-gradient(135deg,rgba(255,255,255,.75),rgba(255,255,255,.55));
+  border:1.5px solid rgba(0,0,0,.06);
+  backdrop-filter:blur(14px);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,border-color .3s;
+  overflow:hidden;isolation:isolate;
+  box-shadow:0 8px 24px -12px rgba(0,0,0,.15);
+}
+.role-card::before{
+  content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1.5px;
+  background:linear-gradient(135deg,rgba(var(--glow),.9),rgba(var(--glow),0),rgba(var(--glow),.9));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:0;transition:opacity .3s;pointer-events:none;z-index:1;
+}
+.role-card::after{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%),rgba(var(--glow),.22),transparent 55%);
+  opacity:0;transition:opacity .3s;z-index:0;
+}
+.role-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -18px rgba(var(--glow),.55)}
+.role-card:hover::before,.role-card:hover::after{opacity:1}
+.role-card .r-ic{
+  width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+  background:linear-gradient(135deg,rgba(var(--glow),.18),rgba(var(--glow),.05));
+  color:#1a5c2e;font-size:28px;margin-bottom:10px;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1);
+  position:relative;z-index:2;
+}
+.role-card:hover .r-ic{transform:scale(1.12) rotate(-6deg)}
+.role-card .r-title{font-weight:700;font-size:1.05rem;color:var(--c-dark,#0e1a12);position:relative;z-index:2}
+.role-card .r-sub{font-size:.82rem;color:var(--c-muted,#5b6b60);margin-top:2px;position:relative;z-index:2}
+.role-card .r-check{
+  position:absolute;top:12px;right:12px;width:22px;height:22px;border-radius:50%;
+  border:1.5px solid rgba(0,0,0,.15);display:grid;place-items:center;
+  transition:all .3s;color:transparent;font-size:14px;z-index:2;background:#fff;
+}
+.role-card.active{
+  border-color:rgba(var(--glow),.7);
+  box-shadow:0 18px 40px -14px rgba(var(--glow),.6),0 0 0 3px rgba(var(--glow),.15);
+  transform:translateY(-2px);
+}
+.role-card.active::before{opacity:1}
+.role-card.active .r-check{background:rgb(var(--glow));border-color:rgb(var(--glow));color:#0e1a12}
+.role-card.admin{--glow:96,165,250}
+.role-card .ripple{position:absolute;border-radius:50%;background:rgba(var(--glow),.35);transform:scale(0);animation:ripple .6s ease-out;pointer-events:none;z-index:1}
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+
+/* ========== Advanced UI additions ========== */
+.marquee{overflow:hidden;position:relative;padding:14px 0;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marquee-track{display:flex;gap:48px;width:max-content;animation:marquee 30s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{font-family:var(--font-heading,inherit);font-weight:700;font-size:1.6rem;color:var(--c-muted,#5b6b60);opacity:.7;white-space:nowrap;display:inline-flex;align-items:center;gap:10px}
+.marquee span::after{content:"•";color:var(--c-emerald,#2e8b57);margin-left:48px}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* Magnetic buttons + tilt */
+.btn{transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
+.tilt{transform-style:preserve-3d;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+
+/* AOS bridging so existing .reveal keeps working without AOS */
+[data-aos]{opacity:0;transition:opacity .8s,transform .8s}
+[data-aos].aos-animate{opacity:1;transform:none!important}
+[data-aos="fade-up"]{transform:translateY(30px)}
+[data-aos="fade-left"]{transform:translateX(-30px)}
+[data-aos="fade-right"]{transform:translateX(30px)}
+[data-aos="zoom-in"]{transform:scale(.92)}
+
+/* ==========================================================================
+   REFINEMENT LAYER — layout, spacing, mobile drawer, overflow
+   (additive only; palette, type, buttons and footer untouched)
+   ========================================================================== */
+
+/* --- 1. Compact inner-page hero ------------------------------------------ */
+.page-hero > .container{width:100%}
+.page-hero .page-hero-inner{padding-block:0;display:flex;flex-direction:column;align-items:center}
+.page-hero .crumbs{margin:0 auto}
+.page-hero h1,.page-hero .split-title{display:block;width:100%}
+.page-hero h1{margin:12px 0 10px;font-size:clamp(1.9rem,4.2vw,3rem)}
+.page-hero p{font-size:1.02rem;max-width:62ch;margin-inline:auto}
+.page-hero .scroll-indicator{display:none}
+
+@media (max-width:900px){
+  .page-hero{min-height:42vh;padding:calc(var(--nav-h,80px) + 24px) 0 40px !important}
+}
+
+/* --- 2. Two-column media + content sections ------------------------------ */
+/* Desktop: IMAGE | CONTENT, alternating via :nth-of-type on the section.    */
+.about-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:center;
+  gap:clamp(28px,4vw,56px);
+}
+.about-grid > *{min-width:0}
+
+/* Media block */
+.about-media{
+  position:relative;
+  align-self:stretch;
+  max-height:380px;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 18px 40px -24px rgba(8,25,16,.45);
+}
+.about-media img{
+  width:100%;
+  height:100%;
+  min-height:300px;
+  object-fit:cover;
+  border-radius:22px;
+  transition:transform .6s cubic-bezier(.2,.8,.2,1);
+}
+.about-media:hover img{transform:scale(1.05)}
+.about-media .badge{
+  position:absolute;left:18px;bottom:18px;z-index:2;
+  display:flex;align-items:center;gap:8px;
+  padding:10px 16px;border-radius:14px;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(8px);
+  font-size:.82rem;font-weight:600;color:var(--c-dark,#0e1a12);
+  box-shadow:0 10px 24px -14px rgba(0,0,0,.5);
+}
+.about-media .badge .n{
+  font-family:var(--font-display);font-size:1.35rem;line-height:1;
+  color:var(--c-emerald,#1a5c2e);
+}
+
+/* Content block — vertically centred, tidy rhythm */
+.about-grid > div:not(.about-media){
+  align-self:center;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.about-grid h2{margin:10px 0 12px}
+.about-grid .lead{margin-bottom:4px}
+
+/* Bullet list used beside images */
+.about-list{display:flex;flex-direction:column;gap:14px;margin-top:20px}
+.about-list li{display:flex;gap:12px;align-items:flex-start}
+.about-list li > .material-icons-outlined{
+  flex:none;width:24px;height:24px;border-radius:50%;
+  display:grid;place-items:center;font-size:16px;
+  background:rgba(142,211,107,.18);color:var(--c-emerald,#1a5c2e);
+  margin-top:2px;
+}
+.about-list b{display:block;font-weight:650;color:var(--c-ink)}
+.about-list p{margin:2px 0 0;font-size:.94rem;color:var(--c-muted,#5b6b60)}
+
+/* Optional flip helper — markup order already alternates image/content. */
+.about-grid.reverse{direction:rtl}
+.about-grid.reverse > *{direction:ltr}
+
+/* Blog featured card: two-column, vertically centred, no empty space */
+.blog-featured{display:grid;grid-template-columns:1.05fr 1fr;gap:0;align-items:stretch;overflow:hidden}
+.blog-featured .service-media{aspect-ratio:auto;height:100%;min-height:340px}
+.blog-featured .service-media img{width:100%;height:100%;max-height:none;object-fit:cover}
+.blog-featured .service-body{padding:40px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.blog-featured h3{font-size:1.75rem;line-height:1.2;margin:6px 0 10px}
+.blog-featured p{margin-bottom:14px}
+.featured-points{display:grid;gap:8px;margin:0 0 20px;padding:0;list-style:none}
+.featured-points li{display:flex;gap:10px;align-items:flex-start;font-size:.94rem;color:var(--c-muted,#5b6b60)}
+.featured-points li > .material-icons-outlined{
+  flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:14px;
+  background:rgba(142,211,107,.18);color:var(--c-emerald,#1a5c2e)}
+.featured-foot{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;
+  padding-top:18px;border-top:1px solid var(--c-line)}
+.featured-author{display:flex;gap:12px;align-items:center}
+.featured-author img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.featured-author b{display:block;font-family:var(--font-display)}
+.featured-author span{font-size:.85rem;color:var(--c-muted)}
+.featured-cta{display:inline-flex;align-items:center;gap:6px;color:var(--c-emerald);font-weight:600}
+@media (max-width:900px){
+  .blog-featured{grid-template-columns:1fr}
+  .blog-featured .service-media{min-height:220px;max-height:280px}
+  .blog-featured .service-body{padding:26px}
+  .blog-featured h3{font-size:1.4rem}
+}
+.service-card > .service-media img{object-fit:cover}
+
+/* --- 3. Spacing ---------------------------------------------------------- */
+.section{padding:64px 0}
+.section-sm{padding:56px 0}
+.section-head{margin-bottom:28px}
+
+@media (max-width:900px){
+  .section{padding:48px 0}
+  .section-sm{padding:44px 0}
+}
+
+/* --- 4. Responsive behaviour of media/content pairs ---------------------- */
+/* Tablet: balanced two columns */
+@media (max-width:1100px) and (min-width:769px){
+  .about-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .about-media{max-height:330px}
+  .about-media img{min-height:260px}
+}
+
+/* Mobile: image ALWAYS above content */
+@media (max-width:768px){
+  .about-grid{grid-template-columns:1fr;gap:24px;direction:ltr !important}
+  .about-media{order:-1;max-height:280px}
+  .about-media img{min-height:220px}
+}
+
+/* --- 5. Mobile drawer ---------------------------------------------------- */
+.mobile-menu{
+  position:fixed;inset:0;
+  width:100%;max-width:100%;
+  z-index:120;
+  padding:0;
+  display:flex;flex-direction:column;
+  background:linear-gradient(180deg,rgba(8,20,14,.97) 0%,rgba(11,31,20,.98) 55%,rgba(8,20,14,.99) 100%);
+  -webkit-backdrop-filter:blur(24px);
+  backdrop-filter:blur(24px);
+  transform:none;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .32s ease,visibility .32s ease;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+}
+.mobile-menu.open{opacity:1;visibility:visible;pointer-events:auto}
+
+.mobile-top{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 18px;
+  flex:0 0 auto;
+}
+.mobile-logo{display:block !important;line-height:0}
+.mobile-logo img{height:26px;width:auto;display:block}
+
+.mobile-close{
+  width:44px;height:44px;border-radius:50%;
+  display:grid;place-items:center;
+  background:transparent;border:0;
+  color:#fff;cursor:pointer;
+  transition:transform .3s var(--ease-out,cubic-bezier(.2,.8,.2,1)),color .3s;
+}
+.mobile-close:hover,.mobile-close:focus-visible{color:var(--c-lime,#8ed36b);transform:rotate(90deg)}
+.mobile-close .material-icons-outlined{font-size:30px}
+
+.mobile-nav{
+  width:100%;max-width:420px;
+  margin:auto;
+  padding:8px 24px 0;
+  display:flex;flex-direction:column;align-items:center;
+  gap:4px;
+}
+.mobile-menu .mobile-nav a{
+  position:relative;
+  display:inline-block;
+  color:#fff;
+  font-family:var(--font-display);
+  font-size:clamp(.95rem,3.6vw,1.05rem);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  text-align:center;
+  padding:16px 6px;
+  border:0;
+  opacity:0;transform:translateY(14px);
+  transition:opacity .45s var(--ease-out,cubic-bezier(.2,.8,.2,1)),
+             transform .45s var(--ease-out,cubic-bezier(.2,.8,.2,1)),
+             color .25s;
+}
+.mobile-menu.open .mobile-nav a{opacity:1;transform:translateY(0)}
+.mobile-menu.open .mobile-nav a:nth-child(1){transition-delay:.06s}
+.mobile-menu.open .mobile-nav a:nth-child(2){transition-delay:.11s}
+.mobile-menu.open .mobile-nav a:nth-child(3){transition-delay:.16s}
+.mobile-menu.open .mobile-nav a:nth-child(4){transition-delay:.21s}
+.mobile-menu.open .mobile-nav a:nth-child(5){transition-delay:.26s}
+.mobile-menu .mobile-nav a:hover{color:var(--c-lime,#8ed36b)}
+.mobile-menu .mobile-nav a.active{color:#fff}
+.mobile-menu .mobile-nav a.active::after{
+  content:"";position:absolute;left:50%;bottom:8px;
+  transform:translateX(-50%);
+  width:42px;height:3px;border-radius:3px;
+  background:linear-gradient(90deg,var(--c-emerald,#1f9d63),var(--c-lime,#8ed36b));
+}
+.mobile-menu .mobile-nav a.active::before{content:none}
+
+.mobile-cta{
+  width:100%;max-width:420px;
+  margin:0 auto;
+  padding:8px 24px 44px;
+  display:flex;flex-direction:column;gap:12px;
+  opacity:0;transform:translateY(14px);
+  transition:opacity .45s ease .3s,transform .45s ease .3s;
+}
+.mobile-menu.open .mobile-cta{opacity:1;transform:translateY(0)}
+.mobile-menu .m-btn{
+  display:block;text-align:center;
+  padding:15px 20px;border-radius:999px;
+  font-family:var(--font-display);
+  font-size:.9rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.16em;
+  transition:background .25s,color .25s,border-color .25s,transform .25s;
+}
+.mobile-menu .m-btn-outline{
+  color:var(--c-lime,#8ed36b);
+  border:1.5px solid var(--c-lime,#8ed36b);
+  background:transparent;
+}
+.mobile-menu .m-btn-outline:hover{background:var(--c-lime,#8ed36b);color:#0b1f14}
+.mobile-menu .m-btn-solid{
+  color:#0b1f14;border:1.5px solid transparent;
+  background:linear-gradient(90deg,var(--c-lime,#8ed36b),var(--c-emerald,#1f9d63));
+}
+.mobile-menu .m-btn:active{transform:scale(.98)}
+
+
+/* --- 6. Overflow / horizontal-scroll hardening --------------------------- */
+html{overflow-x:hidden;max-width:100%}
+body{overflow-x:hidden;max-width:100%;position:relative}
+body.no-scroll{overflow:hidden;touch-action:none}
+img,svg,video,canvas{max-width:100%}
+.container{width:100%;max-width:min(var(--container),100%);box-sizing:border-box}
+.nav{
+  left:16px;right:16px;
+  width:auto;max-width:min(var(--container),calc(100% - 32px));
+  box-sizing:border-box;
+}
+@media (max-width:900px){
+  .nav{left:12px;right:12px;max-width:calc(100% - 24px)}
+}
+.footer,.footer-bg,.hero,.page-hero,.section{max-width:100%;overflow-x:clip}
+.marquee,.testi-track,[data-testi-track]{max-width:100%;overflow-x:auto;scrollbar-width:none}
+[data-testi-track]::-webkit-scrollbar{display:none}
+
+/* Drawer overrides for base style.css defaults */
+.mobile-menu .mobile-logo{margin:0;opacity:1;transform:none;padding:0;border:0}
+.mobile-menu .m-btn{opacity:1;transform:none}
+.mobile-menu.open .m-btn{opacity:1}
+
+/* =========================================================================
+   7. FINAL UI/UX PASS — drawer, subscribe form, dashboard shell
+   ========================================================================= */
+
+/* --- 7.1 Drawer: no logo, "Menu" label left, close top-right ------------- */
+.mobile-menu .mobile-logo{display:none !important}
+.mobile-menu .mobile-top{
+  justify-content:space-between;
+  padding:18px 20px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.mobile-menu-label{
+  font-family:var(--font-display,inherit);
+  font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);
+}
+.mobile-menu .mobile-close{
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+  color:#fff;display:grid;place-items:center;cursor:pointer;
+  transition:background .25s ease,transform .25s ease;
+}
+.mobile-menu .mobile-close:hover{background:rgba(255,255,255,.16)}
+.mobile-menu .mobile-close:active{transform:scale(.94)}
+.mobile-menu .mobile-close .material-icons-outlined{color:#fff;font-size:24px}
+
+/* Identical hamburger on every page (About page reference design) */
+.nav-toggle{
+  display:none;
+  width:46px;height:46px;border-radius:50%;
+  background:var(--c-lime,#8ed36b);color:var(--c-dark,#0b1f14);
+  border:0;padding:0;cursor:pointer;
+  place-items:center;flex:0 0 auto;
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.nav-toggle:active{transform:scale(.94)}
+.nav-toggle .material-icons-outlined{color:var(--c-dark,#0b1f14);font-size:26px;line-height:1}
+@media (max-width:900px){
+  .nav-links,.nav-cta{display:none}
+  .nav-toggle{display:grid}
+}
+
+/* --- 7.2 Blog subscribe form -------------------------------------------- */
+.subscribe-form{
+  display:flex;align-items:stretch;gap:10px;flex-wrap:wrap;
+  width:100%;max-width:560px;margin:22px auto 0;
+}
+.subscribe-field{
+  flex:1 1 260px;min-width:0;
+  display:flex;align-items:center;gap:10px;
+  padding:0 16px;height:54px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:14px;
+  transition:border-color .25s ease,background .25s ease;
+}
+.subscribe-field:focus-within{border-color:var(--c-lime,#8ed36b);background:rgba(255,255,255,.18)}
+.subscribe-field .material-icons-outlined{color:rgba(255,255,255,.65);font-size:20px}
+.subscribe-field input{
+  flex:1;min-width:0;height:100%;
+  background:transparent;border:0;outline:none;color:#fff;font-size:1rem;
+}
+.subscribe-field input::placeholder{color:rgba(255,255,255,.55)}
+.subscribe-form .subscribe-btn{
+  flex:0 0 auto;height:54px;padding:0 28px;border-radius:14px;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-weight:600;white-space:nowrap;
+}
+@media (max-width:520px){
+  .subscribe-form{flex-direction:column;gap:12px}
+  .subscribe-form .subscribe-btn{width:100%}
+}
+
+/* --- 7.3 Dashboard shell: fixed sidebar + fixed topbar, scrolling body --- */
+html:has(body[data-role]){height:100%;overflow:hidden}
+body[data-role]{height:100dvh;overflow:hidden;overscroll-behavior:none}
+body[data-role] .dash{
+  display:grid;
+  grid-template-columns:264px minmax(0,1fr);
+  min-height:0;height:100dvh;
+}
+body[data-role] .dash-side{
+  position:fixed;top:0;left:0;bottom:0;
+  width:264px;height:100dvh;
+  padding:18px 16px;
+  display:flex;flex-direction:column;gap:2px;
+  overflow-y:auto;overscroll-behavior:contain;
+  z-index:200;
+}
+body[data-role] .dash-brand{padding:0 8px 14px;margin-bottom:12px}
+body[data-role] .dash-brand img{height:30px}
+body[data-role] .dash-nav a{padding:10px 12px;font-size:.92rem}
+body[data-role] .dash-side-profile{margin-top:10px;padding:10px}
+body[data-role] .dash-logout{margin-top:8px;padding-top:14px}
+
+body[data-role] .dash-main{
+  grid-column:2;
+  height:100dvh;min-height:0;
+  display:flex;flex-direction:column;
+  padding:0;min-width:0;overflow:hidden;
+}
+body[data-role] .dash-topbar{
+  flex:0 0 auto;
+  margin:0;border-radius:0;
+  border:0;border-bottom:1px solid var(--c-line);
+  padding:10px 24px;
+  position:relative;z-index:20;
+}
+/* Only this region scrolls */
+body[data-role] .dash-main > *{flex:0 0 auto;min-height:0}
+body[data-role] .dash-main > .dash-scroll{
+  flex:1 1 auto;min-height:0;height:auto;
+  overflow-y:auto;overflow-x:hidden;
+  overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+  padding:18px 24px 28px;
+}
+body[data-role] .dash-scroll > *:first-child{margin-top:0}
+body[data-role] .dash-scroll > *:last-child{margin-bottom:0}
+
+/* Compact vertical rhythm */
+body[data-role] .dash-head{margin-bottom:16px}
+body[data-role] .dash-head h1{font-size:1.6rem;line-height:1.2}
+body[data-role] .dash-head p{margin-top:4px;font-size:.92rem}
+body[data-role] .widgets{gap:14px;margin-bottom:0}
+body[data-role] .dash-row,
+body[data-role] .dash-row-2,
+body[data-role] .dash-row-3{margin-top:16px;gap:16px}
+body[data-role] .panel{padding:18px}
+body[data-role] .panel h3{margin-bottom:10px}
+body[data-role] .section{padding:0}
+body[data-role] .section:first-child{padding-top:0}
+
+/* Animations must never leave blank space if a CDN is unavailable */
+body[data-role] [data-aos]{opacity:1 !important;transform:none !important}
+
+/* Messages: Inbox | Message | Notifications (desktop) */
+body[data-role] .dash-row.messages-row{
+  display:grid;
+  grid-template-columns:320px minmax(0,1fr) 320px;
+  gap:16px;align-items:start;margin-top:0;
+}
+body[data-role] .messages-row > .panel{
+  display:flex;flex-direction:column;min-width:0;max-height:none;
+}
+body[data-role] .messages-row .inbox{
+  display:block;height:auto;border:0;border-radius:0;background:transparent;
+}
+body[data-role] .messages-row .inbox-list{
+  border:1px solid var(--c-line);border-radius:14px;overflow:hidden auto;
+  max-height:calc(100dvh - 260px);height:auto;background:#fff;
+}
+body[data-role] .messages-row .msg-view{
+  min-height:0;padding:0;
+}
+body[data-role] .messages-row .notif-list{max-height:none}
+@media (max-width:1200px){
+  body[data-role] .dash-row.messages-row{grid-template-columns:320px minmax(0,1fr)}
+  body[data-role] .messages-row > .panel:last-child{grid-column:1 / -1}
+}
+@media (max-width:900px){
+  body[data-role] .dash-row.messages-row{grid-template-columns:minmax(0,1fr)}
+  body[data-role] .messages-row > .panel:last-child{grid-column:auto}
+  body[data-role] .messages-row .inbox-list{max-height:340px}
+}
+
+/* --- 7.4 Responsive sidebar: tablet collapsible, mobile drawer ----------- */
+@media (max-width:1200px) and (min-width:1001px){
+  body[data-role] .dash{grid-template-columns:84px minmax(0,1fr)}
+  body[data-role] .dash-side{width:84px;padding:16px 10px;align-items:stretch}
+  body[data-role] .dash-side .dash-nav a{justify-content:center;padding:12px 0}
+  body[data-role] .dash-side .dash-nav a span:not(.material-icons-outlined){display:none}
+  body[data-role] .dash-nav a{font-size:0}
+  body[data-role] .dash-nav a .material-icons-outlined{font-size:1.35rem}
+  body[data-role] .dash-brand img{height:26px}
+  body[data-role] .dash-side-profile,
+  body[data-role] .dash-side-profile + *{display:none}
+  body[data-role] .dash-logout{justify-content:center;font-size:0}
+  body[data-role] .dash-logout .material-icons-outlined{font-size:1.3rem}
+}
+@media (max-width:1000px){
+  body[data-role] .dash{grid-template-columns:minmax(0,1fr)}
+  body[data-role] .dash-side{
+    width:min(280px,86vw);
+    transform:translateX(-100%);
+    transition:transform .32s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.35);
+  }
+  body[data-role] .dash-side.open{transform:translateX(0)}
+  body[data-role] .dash-main{grid-column:1}
+  body[data-role] .dash-topbar{padding:8px 14px;gap:10px}
+  body[data-role] .dash-scroll{padding:14px}
+  body[data-role] .dash-head h1{font-size:1.32rem}
+  body.sidebar-open::after{
+    content:"";position:fixed;inset:0;background:rgba(6,16,11,.5);z-index:150;
+  }
+}
+@media (min-width:1001px){
+  body[data-role] [data-dash-toggle]{display:none !important}
+}
+@media (max-width:640px){
+  body[data-role] .dash-search{display:none}
+  body[data-role] .dash-topbar{justify-content:space-between}
+  body[data-role] .widgets{grid-template-columns:1fr 1fr;gap:12px}
+  body[data-role] .dash-row,
+  body[data-role] .dash-row-2,
+  body[data-role] .dash-row-3{margin-top:12px;gap:12px}
+  body[data-role] .panel{padding:14px}
+  body[data-role] .inbox{grid-template-columns:1fr}
+  body[data-role] .msg-view{padding:16px}
+}
+body[data-role] .dash-nav{align-content:start;gap:4px}
+
+/* Grid/flex children must be allowed to shrink inside the dashboard */
+body[data-role] .dash-row > *,
+body[data-role] .dash-row-2 > *,
+body[data-role] .dash-row-3 > *,
+body[data-role] .widgets > *,
+body[data-role] .inbox > *,
+body[data-role] .panel{min-width:0;max-width:100%}
+body[data-role] .inbox{min-width:0}
+body[data-role] .msg-item,
+body[data-role] .msg-item > *{min-width:0}
+body[data-role] .msg-item p,
+body[data-role] .msg-item h4{overflow-wrap:anywhere}
+body[data-role] .dash-scroll table{width:100%;display:block;overflow-x:auto}

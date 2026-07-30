@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Messages — STACKLY</title>
+  <meta name="description" content="Support and contact inbox.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/enhance.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+</head>
+
+<body data-role="admin" data-active="messages">
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-ring"></div>
+  </div>
+  <div class="dash">
+    <aside class="dash-side" id="dashSidebar"></aside>
+    <main class="dash-main">
+      <div class="dash-topbar" id="dashTopbar"></div>
+
+      <div class="dash-head" data-aos="fade-up">
+        <h1>Messages</h1>
+        <p>Inbox, support requests and contact form submissions.</p>
+      </div>
+
+      <div class="dash-row messages-row">
+        <div class="panel">
+          <h3>Support inbox</h3>
+          <div class="inbox-list">
+            <div class="inbox-search"><span class="material-icons-outlined">search</span><input
+                placeholder="Search tickets..."></div>
+            <div class="msg-item active">
+              <div class="av">V</div>
+              <div><b>Vertex Co.</b>
+                <div class="snip" onclick="window.location.href='404.html'">Cannot download July report from dashboard.</div><time>10:14</time>
+              </div>
+            </div>
+            <div class="msg-item">
+              <div class="av">N</div>
+              <div><b>Nordex Plant</b>
+                <div class="snip" onclick="window.location.href='404.html'">Requesting a custom API integration.</div><time>09:02</time>
+              </div>
+            </div>
+            <div class="msg-item">
+              <div class="av">H</div>
+              <div><b>Hexa Industries</b>
+                <div class="snip" onclick="window.location.href='404.html'">Billing question about H1 invoice.</div><time>Yesterday</time>
+              </div>
+            </div>
+            <div class="msg-item">
+              <div class="av">B</div>
+              <div><b>BioNorth</b>
+                <div class="snip" onclick="window.location.href='404.html'">Route change for Warehouse 4.</div><time>Mon</time>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Message</h3>
+          <div class="msg-view">
+            <div class="from">
+              <div class="av">V</div>
+              <div><b>Vertex Co. — Maria Chen</b><span
+                  style="font-size:.8rem;color:var(--c-muted);display:block">maria@vertex.com · Ticket #4821</span>
+              </div>
+            </div>
+            <div class="body">
+              <p>Hi team,</p>
+              <p>I can see the July ESG report listed in my dashboard but the download button is not responding on
+                Safari. Chrome works fine.</p>
+              <p>Could you take a look? Not urgent, but I'd like to share it with our board on Friday.</p>
+              <p>Thanks,<br>Maria</p>
+            </div>
+            <div class="msg-reply"><input placeholder="Write a reply..."><button class="btn btn-primary"
+                style="padding:12px 20px" onclick="window.location.href='404.html'">Reply <span class="material-icons-outlined">send</span></button></div>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Contact requests</h3>
+          <div class="notif-list">
+            <div class="notif-item">
+              <div class="ic"><span class="material-icons-outlined">mail</span></div>
+              <div><b>Riverside Foods</b><span>Interested in enterprise plan · 20m ago</span></div>
+            </div>
+            <div class="notif-item">
+              <div class="ic"><span class="material-icons-outlined">mail</span></div>
+              <div><b>Atlas Logistics</b><span>Requesting quote · 1h ago</span></div>
+            </div>
+            <div class="notif-item">
+              <div class="ic"><span class="material-icons-outlined">mail</span></div>
+              <div><b>City of Fremont</b><span>Extension for pilot · 3h ago</span></div>
+            </div>
+            <div class="notif-item">
+              <div class="ic"><span class="material-icons-outlined">mail</span></div>
+              <div><b>Sunbelt Farms</b><span>Organics collection · yesterday</span></div>
+            </div>
+          </div>
+          <h4 style="margin-top:20px">Support metrics</h4>
+          <div class="kpi-grid">
+            <div class="kpi">
+              <div class="lbl">Open tickets</div>
+              <div class="val" data-count="12">0</div>
+            </div>
+            <div class="kpi">
+              <div class="lbl">Avg response</div>
+              <div class="val" data-count="42" data-suffix=" min">0</div>
+            </div>
+            <div class="kpi">
+              <div class="lbl">Satisfaction</div>
+              <div class="val" data-count="4.7">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>

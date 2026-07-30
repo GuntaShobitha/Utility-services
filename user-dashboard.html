@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User Dashboard — STACKLY</title>
+<meta name="description" content="Your STACKLY account dashboard.">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/enhance.css">
+<link rel="stylesheet" href="assets/css/dashboard.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+</head>
+<body data-role="user" data-active="dashboard">
+<div class="page-loader" id="pageLoader"><div class="loader-ring"></div></div>
+<div class="dash">
+  <aside class="dash-side" id="dashSidebar"></aside>
+  <main class="dash-main">
+    <div class="dash-topbar" id="dashTopbar"></div>
+
+    <div class="dash-head" data-aos="fade-up">
+      <h1>Welcome back, <span class="js-user-first"></span> 👋</h1>
+      <p>Here's what's happening across your operations this week.</p>
+    </div>
+
+    <div class="widgets">
+      <div class="widget"><div class="top"><div class="ic"><span class="material-icons-outlined">recycling</span></div><span class="trend">+12%</span></div><div class="num" data-count="1284" data-suffix="">0</div><div class="lbl">Kg diverted this week</div></div>
+      <div class="widget"><div class="top"><div class="ic"><span class="material-icons-outlined">local_shipping</span></div><span class="trend">+4%</span></div><div class="num" data-count="36">0</div><div class="lbl">Pickups completed</div></div>
+      <div class="widget"><div class="top"><div class="ic"><span class="material-icons-outlined">bolt</span></div><span class="trend">+8%</span></div><div class="num" data-count="92" data-suffix=" kWh">0</div><div class="lbl">Energy recovered</div></div>
+      <div class="widget"><div class="top"><div class="ic"><span class="material-icons-outlined">co2</span></div><span class="trend down">-6%</span></div><div class="num" data-count="2.4" data-suffix=" T">0</div><div class="lbl">CO₂ avoided</div></div>
+    </div>
+
+    <div class="dash-row">
+      <div class="panel">
+        <h3>Weekly diversion (kg)</h3>
+        <div class="chart-wrap"><canvas data-chart='{"type":"line","data":{"labels":["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],"datasets":[{"label":"Recycled","data":[420,680,590,820,710,980,640],"borderColor":"#1f7a4c","backgroundColor":"rgba(142,211,107,.25)","tension":.4,"fill":true,"pointRadius":4,"pointBackgroundColor":"#1f7a4c"}]},"options":{"plugins":{"legend":{"display":false}},"scales":{"y":{"beginAtZero":true,"grid":{"color":"rgba(0,0,0,.05)"}},"x":{"grid":{"display":false}}},"maintainAspectRatio":false}}'></canvas></div>
+      </div>
+      <div class="panel">
+        <h3>Recent activity</h3>
+        <div class="activity">
+          <div class="activity-item"><div class="ic"><span class="material-icons-outlined">check</span></div><div><b>Pickup completed</b><span>Loading dock A · 2h ago</span></div></div>
+          <div class="activity-item"><div class="ic"><span class="material-icons-outlined">description</span></div><div><b>Monthly report ready</b><span>June ESG summary · 6h ago</span></div></div>
+          <div class="activity-item"><div class="ic"><span class="material-icons-outlined">notifications</span></div><div><b>Bin 12 near full</b><span>North wing · 8h ago</span></div></div>
+          <div class="activity-item"><div class="ic"><span class="material-icons-outlined">recycling</span></div><div><b>New offtake partner</b><span>Verdant Group · yesterday</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dash-row-3">
+      <div class="panel">
+        <h3>Upcoming collections</h3>
+        <table class="table">
+          <thead><tr><th>Date</th><th>Location</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Jul 30</td><td>HQ · Dock A</td><td><span class="badge-s ok">Scheduled</span></td></tr>
+            <tr><td>Jul 31</td><td>Warehouse 2</td><td><span class="badge-s warn">Pending</span></td></tr>
+            <tr><td>Aug 01</td><td>North Wing</td><td><span class="badge-s ok">Scheduled</span></td></tr>
+            <tr><td>Aug 03</td><td>Plant 7</td><td><span class="badge-s err">Delayed</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="panel">
+        <h3>Environmental impact</h3>
+        <div class="progress-row">
+          <div><div class="progress-label"><span>Landfill diversion</span><b>82%</b></div><div class="progress"><span style="width:82%"></span></div></div>
+          <div><div class="progress-label"><span>Water saved</span><b>64%</b></div><div class="progress"><span style="width:64%"></span></div></div>
+          <div><div class="progress-label"><span>CO₂ reduction</span><b>71%</b></div><div class="progress"><span style="width:71%"></span></div></div>
+          <div><div class="progress-label"><span>Renewable energy</span><b>58%</b></div><div class="progress"><span style="width:58%"></span></div></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Quick actions</h3>
+        <div class="qa-grid">
+          <a class="qa" href="404.html"><span class="material-icons-outlined">local_shipping</span><b>Request pickup</b><span>Book collection</span></a>
+          <a class="qa" href="404.html"><span class="material-icons-outlined">download</span><b>Download report</b><span>Monthly ESG</span></a>
+          <a class="qa" href="404.html"><span class="material-icons-outlined">forum</span><b>Message support</b><span>24/7 help</span></a>
+          <a class="qa" href="404.html"><span class="material-icons-outlined">add_task</span><b>Track project</b><span>Live status</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dash-row-2">
+      <div class="panel">
+        <h3>Collection schedule</h3>
+        <div class="calendar"><div class="dow">S</div><div class="dow">M</div><div class="dow">T</div><div class="dow">W</div><div class="dow">T</div><div class="dow">F</div><div class="dow">S</div><div class="day muted"></div><div class="day muted"></div><div class="day muted"></div><div class="day">1</div><div class="day event">2</div><div class="day">3</div><div class="day">4</div><div class="day">5</div><div class="day">6</div><div class="day">7</div><div class="day event">8</div><div class="day">9</div><div class="day">10</div><div class="day">11</div><div class="day">12</div><div class="day">13</div><div class="day">14</div><div class="day today">15</div><div class="day">16</div><div class="day">17</div><div class="day">18</div><div class="day">19</div><div class="day">20</div><div class="day">21</div><div class="day event">22</div><div class="day">23</div><div class="day">24</div><div class="day">25</div><div class="day">26</div><div class="day event">27</div><div class="day">28</div><div class="day">29</div><div class="day">30</div></div>
+      </div>
+      <div class="panel">
+        <h3>Announcements</h3>
+        <div class="announce">
+          <div class="announce-item"><span class="material-icons-outlined">campaign</span><div><b>Route change effective Aug 5</b><span>Trucks 12 and 14 will run reversed sequences.</span></div></div>
+          <div class="announce-item"><span class="material-icons-outlined">verified</span><div><b>ISO 14001 renewal complete</b><span>Certificate valid through Q3 2027.</span></div></div>
+          <div class="announce-item"><span class="material-icons-outlined">eco</span><div><b>New composting stream launched</b><span>Organics can now be sorted at Dock C.</span></div></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+<script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="assets/js/dashboard.js"></script>
+</body>
+</html>

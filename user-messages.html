@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Messages — STACKLY</title>
+<meta name="description" content="Inbox and notifications.">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/enhance.css">
+<link rel="stylesheet" href="assets/css/dashboard.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+</head>
+<body data-role="user" data-active="messages">
+<div class="page-loader" id="pageLoader"><div class="loader-ring"></div></div>
+<div class="dash">
+  <aside class="dash-side" id="dashSidebar"></aside>
+  <main class="dash-main">
+    <div class="dash-topbar" id="dashTopbar"></div>
+
+    <div class="dash-head" data-aos="fade-up"><h1>Messages</h1><p>Your inbox, support conversations and notifications.</p></div>
+
+    <div class="dash-row messages-row">
+      <div class="panel">
+        <h3>Inbox</h3>
+        <div class="inbox-list">
+            <div class="inbox-search"><span class="material-icons-outlined">search</span><input placeholder="Search messages..."></div>
+            <div class="msg-item active"><div class="av">S</div><div><b>Support Team</b><div class="snip">Your July ESG summary is ready to review.</div><time>10:14</time></div></div>
+            <div class="msg-item"><div class="av">M</div><div><b>Maria Chen</b><div class="snip">Confirming pickup change for Warehouse 2.</div><time>09:02</time></div></div>
+            <div class="msg-item"><div class="av">D</div><div><b>Dispatch</b><div class="snip">Route 12 will run 20 minutes earlier tomorrow.</div><time>Yesterday</time></div></div>
+            <div class="msg-item"><div class="av">V</div><div><b>Verdant Group</b><div class="snip">Partnership contract signed — welcome!</div><time>Mon</time></div></div>
+            <div class="msg-item"><div class="av">B</div><div><b>Billing</b><div class="snip">Invoice #INV-4821 has been paid.</div><time>Sun</time></div></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Message</h3>
+        <div class="msg-view">
+            <div class="from"><div class="av">S</div><div><b>Support Team</b><span style="font-size:.8rem;color:var(--c-muted);display:block">support@stackly.com · 10:14</span></div></div>
+            <div class="body">
+              <p>Hi <span class="js-user-first"></span>,</p>
+              <p>Your July 2026 ESG summary is now available in the Reports tab. Diversion rate reached 82% this month — a new record for your account.</p>
+              <p>Let us know if you'd like a call to walk through the results.</p>
+              <p>— The STACKLY Support Team</p>
+            </div>
+            <div class="msg-reply">
+              <input placeholder="Write a reply...">
+              <button class="btn btn-primary" style="padding:12px 20px" onclick="window.location.href='404.html'">Reply <span class="material-icons-outlined">send</span></button>
+            </div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Notifications</h3>
+        <div class="notif-list">
+          <div class="notif-item"><div class="ic"><span class="material-icons-outlined">notifications</span></div><div><b>Bin 12 near full</b><span>North wing · 12m ago</span></div></div>
+          <div class="notif-item"><div class="ic"><span class="material-icons-outlined">event</span></div><div><b>Collection tomorrow</b><span>Dock A · 8am</span></div></div>
+          <div class="notif-item"><div class="ic"><span class="material-icons-outlined">verified</span></div><div><b>ISO 14001 renewed</b><span>Today</span></div></div>
+          <div class="notif-item"><div class="ic"><span class="material-icons-outlined">payment</span></div><div><b>Invoice paid</b><span>Yesterday</span></div></div>
+        </div>
+        <h4 style="margin-top:20px">Support</h4>
+        <div class="notif-list">
+          <div class="notif-item"><div class="ic"><span class="material-icons-outlined">help</span></div><div><b>Ticket #4821</b><span>Awaiting agent · 2h ago</span></div></div>
+          <div class="notif-item"><div class="ic"><span class="material-icons-outlined">check_circle</span></div><div><b>Ticket #4780</b><span>Resolved · yesterday</span></div></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+<script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="assets/js/dashboard.js"></script>
+</body>
+</html>

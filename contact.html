@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact STACKLY — Talk to Our Team</title>
+  <meta name="description"
+    content="Get in touch with STACKLY for waste, cleaning, recycling and sustainability services. Offices worldwide.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/enhance.css">
+</head>
+
+<body>
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-ring"></div>
+  </div>
+  <div class="scroll-progress"></div>
+  <header class="nav">
+    <div class="container nav-inner"><a href="index.html" class="nav-logo"><img src="images/stackly-logo-recolored.webp"
+          alt="STACKLY Logo" class="nav-logo-img"></a>
+      <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a
+          href="services.html">Services</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
+      <div class="nav-cta"><a href="login.html" class="btn btn-ghost">Login</a><a href="contact.html"
+          class="btn btn-primary">Get a Quote <span class="material-icons-outlined">arrow_forward</span></a></div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span class="material-icons-outlined">menu</span></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Main menu" aria-hidden="true">
+    <div class="mobile-top">
+      <span class="mobile-menu-label">Menu</span>
+      <button class="mobile-close" type="button" id="mobileClose" aria-label="Close menu"><span class="material-icons-outlined">close</span></button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="mobile-cta">
+      <a href="login.html" class="m-btn m-btn-outline">Login</a>
+      <a href="register.html" class="m-btn m-btn-solid">Register</a>
+    </div>
+  </div>
+
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image:url(images/hero.webp)"></div>
+    <div class="hero-overlay"></div>
+    <div class="container page-hero-inner">
+      <div class="crumbs"><a href="index.html">Home</a> / <span>Contact</span></div>
+      <h1>Let's talk cleaner utilities.</h1>
+      <p>Reach out for a quote, a site audit, or just to say hello.</p>
+    </div>
+  </section>
+
+  <!-- CARDS -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-cards">
+        <div class="contact-card reveal">
+          <div class="ic"><span class="material-icons-outlined">mail</span></div>
+          <h4>Email</h4>
+          <p>info@stackly.co<br>press@stackly.co</p>
+        </div>
+        <div class="contact-card reveal">
+          <div class="ic"><span class="material-icons-outlined">call</span></div>
+          <h4>Phone</h4>
+          <p>+91 70107 92745<br>Mon–Fri, 8am–7pm</p>
+        </div>
+        <div class="contact-card reveal">
+          <div class="ic"><span class="material-icons-outlined">place</span></div>
+          <h4>MMR Complex</h4>
+          <p>Chinna Thirupathi, Salem<br>Tamil Nadu 636008</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFICES -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow"><span class="material-icons-outlined">public</span>
+          Locations</span>
+        <h2>Offices worldwide.</h2>
+      </div>
+      <div class="grid-4">
+        <div class="mv-card reveal">
+          <h4 style="font-family:var(--font-display)">San Francisco</h4>
+          <p>240 Marina Green Way<br>CA 94123, USA</p>
+        </div>
+        <div class="mv-card reveal">
+          <h4 style="font-family:var(--font-display)">Berlin</h4>
+          <p>Prenzlauer Allee 87<br>10405 Berlin, DE</p>
+        </div>
+        <div class="mv-card reveal">
+          <h4 style="font-family:var(--font-display)">Singapore</h4>
+          <p>18 Marina Blvd, Level 22<br>Singapore 018980</p>
+        </div>
+        <div class="mv-card reveal">
+          <h4 style="font-family:var(--font-display)">São Paulo</h4>
+          <p>Av. Paulista 1578<br>Bela Vista, SP 01310</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM + MAP -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="contact-wrap">
+        <div class="reveal-left">
+          <span class="eyebrow"><span class="material-icons-outlined">chat</span> Send a message</span>
+          <h2>Tell us about your site.</h2>
+          <p style="margin:14px 0 24px">We reply within one business day. For urgent operational issues, please call our
+            24/7 line.</p>
+          <form class="contact-form" id="contactForm">
+            <div class="form-grid">
+              <div class="form-row">
+                <div class="field"><label>Full name</label><input type="text" required></div>
+                <div class="field"><label>Email</label><input type="email" required></div>
+              </div>
+              <div class="form-row">
+                <div class="field"><label>Company</label><input type="text"></div>
+                <div class="field"><label>Service interest</label>
+                  <select>
+                    <option>Waste Collection</option>
+                    <option>Industrial Cleaning</option>
+                    <option>Smart Recycling</option>
+                    <option>Water Treatment</option>
+                    <option>Energy Recovery</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field"><label>Message</label><textarea
+                  placeholder="Tell us a bit about your site or project..." required></textarea></div>
+              <button type="submit" class="btn btn-primary" style="justify-content:center">Send message <span
+                  class="material-icons-outlined">send</span></button>
+            </div>
+          </form>
+        </div>
+        <div class="reveal-right">
+          <div class="map-placeholder">
+            <div class="pin"><span class="material-icons-outlined">place</span> STACKLY HQ<br><small
+                style="font-weight:400;color:var(--c-muted)">San Francisco, CA</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head center reveal"><span class="eyebrow"><span
+            class="material-icons-outlined">help_outline</span> FAQ</span>
+        <h2>Answers before you ask.</h2>
+      </div>
+      <div class="faq">
+        <div class="faq-item"><button class="faq-q">What's your typical response time? <span
+              class="material-icons-outlined">add</span></button>
+          <div class="faq-a">
+            <p>Under one business day for new inquiries. Urgent operational issues on existing contracts get a 24/7
+              response.</p>
+          </div>
+        </div>
+        <div class="faq-item"><button class="faq-q">Do you serve residential clients? <span
+              class="material-icons-outlined">add</span></button>
+          <div class="faq-a">
+            <p>We focus on commercial, industrial and municipal operators. For residential service, we recommend our
+              partner network.</p>
+          </div>
+        </div>
+        <div class="faq-item"><button class="faq-q">Can I book a site visit? <span
+              class="material-icons-outlined">add</span></button>
+          <div class="faq-a">
+            <p>Absolutely. Free site audits are available for qualifying enterprises — reach out with your address and
+              we'll schedule a walk-through.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="cta-block reveal-zoom">
+        <h2>Prefer a call?</h2>
+        <p>Book a 20-minute intro call with our services team.</p>
+        <div class="btn-group"><a href="tel:+917010792745" class="btn btn-accent">+91 70107 92745</a><a
+            href="mailto:info@stackly.co" class="btn btn-white">info@stackly.co</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer footer-v2">
+    <div class="footer-bg"><img src="images/service-3.webp" alt=""></div>
+    <div class="footer-accent footer-accent-l" aria-hidden="true">
+      <svg viewBox="0 0 140 170" fill="none">
+        <path d="M26 40h88l-8 114a9 9 0 0 1-9 8H43a9 9 0 0 1-9-8L26 40Z" stroke="currentColor" stroke-width="2.5"
+          stroke-dasharray="5 6" />
+        <path d="M16 40h108M56 18h30l7 22H49l7-22Z" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 6" />
+      </svg>
+    </div>
+    <div class="footer-accent footer-accent-r" aria-hidden="true">
+      <svg viewBox="0 0 120 120" fill="none">
+        <circle cx="60" cy="60" r="46" stroke="currentColor" stroke-width="2" stroke-dasharray="4 8" />
+        <path d="M60 30v22M50 44l10 8 10-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo"><img src="images/stackly-logo-recolored.webp" alt="STACKLY"></a>
+          <p>Utility &amp; environmental services engineered for the way modern cities and industries actually operate.
+          </p>
+          <a href="404.html" class="footer-phone">+91 70107 92745</a>
+          <a href="404.html" class="footer-email">info@stackly.com</a>
+          <div class="socials">
+            <a href="404.html" aria-label="Facebook"><span class="material-icons-outlined"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                </svg></span></a>
+            <a href="404.html" aria-label="YouTube"><span class="material-icons-outlined"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
+                </svg></span></a>
+            <a href="404.html" aria-label="LinkedIn"><span class="material-icons-outlined"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                </svg></span></a>
+            <a href="404.html" aria-label="Instagram"><span class="material-icons-outlined"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                </svg></span></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Quick Link</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Our Solutions</h4>
+          <ul>
+            <li><a href="404.html">Safe handling</a></li>
+            <li><a href="404.html">Eco disposal</a></li>
+            <li><a href="404.html">Waste Collection</a></li>
+            <li><a href="404.html">Waste Reuse</a></li>
+            <li><a href="404.html">Fast pickup</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-news">
+          <h4>Get the latest inspiration &amp; insights</h4>
+          <form class="newsletter newsletter-lg">
+            <input type="email" placeholder="Email Address" required>
+            <button type="submit" aria-label="Subscribe"><span
+                class="material-icons-outlined">arrow_forward</span></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span data-year></span> STACKLY. All rights reserved.</span>
+        <span>Built for a greener tomorrow.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/enhance.js" defer></script>
+</body>
+
+</html>

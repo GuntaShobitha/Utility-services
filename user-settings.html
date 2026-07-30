@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settings — STACKLY</title>
+<meta name="description" content="Manage your STACKLY account.">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/enhance.css">
+<link rel="stylesheet" href="assets/css/dashboard.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+</head>
+<body data-role="user" data-active="settings">
+<div class="page-loader" id="pageLoader"><div class="loader-ring"></div></div>
+<div class="dash">
+  <aside class="dash-side" id="dashSidebar"></aside>
+  <main class="dash-main">
+    <div class="dash-topbar" id="dashTopbar"></div>
+
+    <div class="dash-head" data-aos="fade-up"><h1>Settings</h1><p>Manage your profile, security, notifications and preferences.</p></div>
+
+    <div class="settings-grid">
+      <nav class="settings-tabs">
+        <a href="#profile" class="active"><span class="material-icons-outlined">person</span> Profile</a>
+        <a href="#password"><span class="material-icons-outlined">lock</span> Password</a>
+        <a href="#notifications"><span class="material-icons-outlined">notifications</span> Notifications</a>
+        <a href="#theme"><span class="material-icons-outlined">palette</span> Theme</a>
+        <a href="#language"><span class="material-icons-outlined">language</span> Language</a>
+        <a href="#privacy"><span class="material-icons-outlined">shield</span> Privacy</a>
+      </nav>
+      <div style="display:grid;gap:20px">
+        <div class="panel" id="profile">
+          <h3>Profile</h3>
+          <div class="profile-hero" style="margin-bottom:0"><div class="av lg js-user-initial">?</div><div><h2 class="js-user-name">User</h2><div class="meta"><span class="js-user-email"></span></div></div></div>
+          <form data-save-form class="form-grid" style="margin-top:20px">
+            <div class="form-row">
+              <div class="field"><label>Display name</label><input value="" class="js-user-name-input"></div>
+              <div class="field"><label>Email</label><input type="email" class="js-user-email-input"></div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="justify-self:start">Save changes <span class="material-icons-outlined">save</span></button>
+          </form>
+        </div>
+        <div class="panel" id="password">
+          <h3>Password</h3>
+          <form data-save-form class="form-grid">
+            <div class="field"><label>Current password</label><input type="password" placeholder="••••••••"></div>
+            <div class="form-row">
+              <div class="field"><label>New password</label><input type="password" placeholder="••••••••"></div>
+              <div class="field"><label>Confirm new</label><input type="password" placeholder="••••••••"></div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="justify-self:start">Update password <span class="material-icons-outlined">lock</span></button>
+          </form>
+        </div>
+        <div class="panel" id="notifications">
+          <h3>Notification preferences</h3>
+          <div class="setting-row"><div class="info"><b>Email notifications</b><span>Monthly reports, invoices and account updates.</span></div><label class="switch"><input type="checkbox" id="n1" checked><span class="slider"></span></label></div>
+          <div class="setting-row"><div class="info"><b>Push notifications</b><span>Route changes and pickup reminders.</span></div><label class="switch"><input type="checkbox" id="n2" checked><span class="slider"></span></label></div>
+          <div class="setting-row"><div class="info"><b>Marketing emails</b><span>Product news and sustainability tips.</span></div><label class="switch"><input type="checkbox" id="n3"><span class="slider"></span></label></div>
+          <div class="setting-row"><div class="info"><b>Weekly digest</b><span>Summary of last week's operations.</span></div><label class="switch"><input type="checkbox" id="n4" checked><span class="slider"></span></label></div>
+        </div>
+        <div class="panel" id="theme">
+          <h3>Theme preference</h3>
+          <div class="setting-row"><div class="info"><b>Light theme</b><span>Bright, high-contrast interface.</span></div><label class="switch"><input type="checkbox" id="t1" checked><span class="slider"></span></label></div>
+          <div class="setting-row"><div class="info"><b>Reduced motion</b><span>Minimise animations and transitions.</span></div><label class="switch"><input type="checkbox" id="t2"><span class="slider"></span></label></div>
+        </div>
+        <div class="panel" id="language">
+          <h3>Language & region</h3>
+          <form data-save-form class="form-grid">
+            <div class="form-row">
+              <div class="field"><label>Language</label><select><option>English (US)</option><option>English (UK)</option><option>Français</option><option>Español</option><option>Deutsch</option></select></div>
+              <div class="field"><label>Timezone</label><select><option>America / Los Angeles</option><option>America / New York</option><option>Europe / London</option><option>Asia / Singapore</option></select></div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="justify-self:start">Save preferences</button>
+          </form>
+        </div>
+        <div class="panel" id="privacy">
+          <h3>Privacy</h3>
+          <div class="setting-row"><div class="info"><b>Share anonymous usage</b><span>Helps us improve dashboard reliability.</span></div><label class="switch"><input type="checkbox" id="p1" checked><span class="slider"></span></label></div>
+          <div class="setting-row"><div class="info"><b>Show my company publicly</b><span>Appears on the STACKLY partners page.</span></div><label class="switch"><input type="checkbox" id="p2"><span class="slider"></span></label></div>
+          <div class="setting-row"><div class="info"><b>Download my data</b><span>Get a copy of everything we store on you.</span></div><a href="#" class="btn btn-ghost" style="padding:8px 14px">Request export</a></div>
+        </div>
+      </div>
+    </div>
+    <script>
+    (function(){var n=document.querySelector('.js-user-name-input'), e=document.querySelector('.js-user-email-input');
+      if(n) n.value=localStorage.getItem('stackly_name')||'';
+      if(e) e.value=localStorage.getItem('stackly_email')||'';
+    })();
+    </script>
+
+  </main>
+</div>
+<script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="assets/js/dashboard.js"></script>
+</body>
+</html>
