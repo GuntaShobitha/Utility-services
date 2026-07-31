@@ -67,8 +67,8 @@
       '<button class="nav-toggle" data-dash-toggle style="width:40px;height:40px;display:grid;place-items:center" aria-label="Menu"><span class="material-icons-outlined">menu</span></button>'+
       '<div class="dash-search"><span class="material-icons-outlined">search</span><input placeholder="Search '+(pageRole==='admin'?'users, projects, invoices':'reports, projects, articles')+'..."></div>'+
       '<div class="dash-icons">'+
-        '<button class="dash-icon-btn" title="Notifications"><span class="material-icons-outlined">notifications</span><span class="dot"></span></button>'+
-        '<button class="dash-icon-btn" title="Messages"><span class="material-icons-outlined">mail</span></button>'+
+      '<button onclick="window.location.href=\'./404.html\'" class="dash-icon-btn" title="Notifications"><span class="material-icons-outlined">notifications</span><span class="dot"></span></button>'+
+'<button onclick="window.location.href=\'./404.html\'" class="dash-icon-btn" title="Messages"><span class="material-icons-outlined">mail</span></button>'+
         '<div class="dash-profile"><div class="av sm">'+esc(initial)+'</div><div><b class="js-user-name"></b><span>'+subtitle+'</span></div></div>'+
       '</div>';
   }
