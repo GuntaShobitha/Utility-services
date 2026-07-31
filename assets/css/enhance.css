@@ -520,7 +520,7 @@ body[data-role] .dash-scroll > *:last-child{margin-bottom:0}
 body[data-role] .dash-head{margin-bottom:16px}
 body[data-role] .dash-head h1{font-size:1.6rem;line-height:1.2}
 body[data-role] .dash-head p{margin-top:4px;font-size:.92rem}
-body[data-role] .widgets{gap:14px;margin-bottom:0}
+body[data-role] .widgets{gap:14px;}
 body[data-role] .dash-row,
 body[data-role] .dash-row-2,
 body[data-role] .dash-row-3{margin-top:16px;gap:16px}
@@ -621,4 +621,4 @@ body[data-role] .msg-item,
 body[data-role] .msg-item > *{min-width:0}
 body[data-role] .msg-item p,
 body[data-role] .msg-item h4{overflow-wrap:anywhere}
-body[data-role] .dash-scroll table{width:100%;display:block;overflow-x:auto}
+body[data-role] .dash-scroll table{width:100%;overflow-x:auto}

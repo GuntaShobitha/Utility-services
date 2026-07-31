@@ -33,7 +33,49 @@
     <div class="dash-row">
       <div class="panel">
         <h3>Revenue vs collections</h3>
-        <div class="chart-wrap tall"><canvas data-chart='{"type":"line","data":{"labels":["Jan","Feb","Mar","Apr","May","Jun","Jul"],"datasets":[{"label":"Revenue ($k)","data":[210,260,310,290,380,430,482],"borderColor":"#1f7a4c","backgroundColor":"rgba(31,122,76,.15)","tension":.4,"fill":true},{"label":"Collections (T)","data":[820,940,1010,980,1120,1180,1240],"borderColor":"#8ed36b","backgroundColor":"rgba(142,211,107,.15)","tension":.4,"fill":true,"yAxisID":"y1"}]},"options":{"scales":{"y":{"beginAtZero":true,"position":"left"},"y1":{"beginAtZero":true,"position":"right","grid":{"display":false}}},"maintainAspectRatio":false}}'></canvas></div>
+        <div class="chart-wrap tall">
+          <canvas data-chart='{
+  "type":"line",
+  "data":{
+    "labels":["Jan","Feb","Mar","Apr","May","Jun","Jul"],
+    "datasets":[
+      {
+        "label":"Revenue ($k)",
+        "data":[210,260,310,290,380,430,482],
+        "borderColor":"#1f7a4c",
+        "backgroundColor":"rgba(31,122,76,.15)",
+        "tension":0.4,
+        "fill":true
+      },
+      {
+        "label":"Collections (T)",
+        "data":[820,940,1010,980,1120,1180,1240],
+        "borderColor":"#8ed36b",
+        "backgroundColor":"rgba(142,211,107,.15)",
+        "tension":0.4,
+        "fill":true,
+        "yAxisID":"y1"
+      }
+    ]
+  },
+  "options":{
+    "scales":{
+      "y":{
+        "beginAtZero":true,
+        "position":"left"
+      },
+      "y1":{
+        "beginAtZero":true,
+        "position":"right",
+        "grid":{
+          "display":false
+        }
+      }
+    },
+    "maintainAspectRatio":false
+  }
+}'></canvas>
+        </div>
       </div>
       <div class="panel">
         <h3>Recent activity</h3>

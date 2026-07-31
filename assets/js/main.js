@@ -202,7 +202,7 @@
     cf.addEventListener('submit', function(e){
       e.preventDefault();
       var btn = cf.querySelector('button[type=submit]');
-      if(btn){ btn.textContent='Sent! We will reply soon'; btn.disabled = true; }
+      if(btn){ window.location.href='./404.html' }
       cf.reset();
     });
   }

@@ -36,6 +36,12 @@
   ];
   var nav = pageRole==='admin' ? adminNav : userNav;
 
+
+  var dashboardUrl = role === 'admin'
+  ? 'admin-dashboard.html'
+  : 'user-dashboard.html';
+
+
   function esc(s){return (s+'').replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
 
   // Sidebar
@@ -45,7 +51,7 @@
       return '<a class="'+(n[0]===active?'active':'')+'" href="'+n[1]+'"><span class="material-icons-outlined">'+n[2]+'</span> '+n[3]+'</a>';
     }).join('');
     side.innerHTML =
-      '<div class="dash-brand"><a href="index.html"><img src="images/logo-dark.webp" alt="STACKLY"></a></div>'+
+      '<div class="dash-brand"><a href="'+dashboardUrl+'"><img src="images/stackly-logo-recolored.webp" alt="STACKLY"></a></div>'+
       '<nav class="dash-nav">'+links+'</nav>'+
       '<div class="dash-side-profile">'+
         '<div class="av">'+esc(initial)+'</div>'+
@@ -136,14 +142,14 @@
   }
 
   // Chart.js declarative bootstrap
-  if(window.Chart){
-    Chart.defaults.font.family="Manrope, Inter, system-ui, sans-serif";
-    Chart.defaults.color="#5b6b62";
-    document.querySelectorAll('canvas[data-chart]').forEach(function(el){
-      try{ var cfg=JSON.parse(el.getAttribute('data-chart')); new Chart(el, cfg); }
-      catch(err){ console.warn('chart parse', err); }
-    });
-  }
+  // if(window.Chart){
+  //   Chart.defaults.font.family="Manrope, Inter, system-ui, sans-serif";
+  //   Chart.defaults.color="#5b6b62";
+  //   document.querySelectorAll('canvas[data-chart]').forEach(function(el){
+  //     try{ var cfg=JSON.parse(el.getAttribute('data-chart')); new Chart(el, cfg); }
+  //     catch(err){ console.warn('chart parse', err); }
+  //   });
+  // }
 
   // Animations
   if(window.AOS){ AOS.init({duration:650, once:true, easing:'ease-out-cubic'}); }
@@ -197,3 +203,12 @@
     });
   }
 })();
+
+document.querySelectorAll("canvas[data-chart]").forEach(canvas => {
+    try {
+        const config = JSON.parse(canvas.dataset.chart);
+        new Chart(canvas.getContext("2d"), config);
+    } catch (err) {
+        console.error("chart parse error", err);
+    }
+});
