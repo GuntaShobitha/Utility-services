@@ -115,9 +115,38 @@
         </div>
         <div class="panel">
           <h3>Revenue growth</h3>
-          <div class="chart-wrap tall"><canvas
+          <!-- <div class="chart-wrap tall"><canvas
               data-chart='{"type":"line","data":{"labels":["Jan","Feb","Mar","Apr","May","Jun","Jul"],"datasets":[{"label":"Revenue","data":[210,260,310,290,380,430,482],"borderColor":"#1f7a4c","backgroundColor":"rgba(142,211,107,.28)","tension":.4,"fill":true,"pointRadius":5,"pointBackgroundColor":"#1f7a4c"}]},"options":{"plugins":{"legend":{"display":false}},"maintainAspectRatio":false}}'></canvas>
-          </div>
+          </div> -->
+          <div class="chart-wrap tall">
+  <canvas
+    data-chart='{
+      "type":"line",
+      "data":{
+        "labels":["Jan","Feb","Mar","Apr","May","Jun","Jul"],
+        "datasets":[
+          {
+            "label":"Revenue",
+            "data":[210,260,310,290,380,430,482],
+            "borderColor":"#1f7a4c",
+            "backgroundColor":"rgba(142,211,107,.28)",
+            "tension":0.4,
+            "fill":true,
+            "pointRadius":5,
+            "pointBackgroundColor":"#1f7a4c"
+          }
+        ]
+      },
+      "options":{
+        "plugins":{
+          "legend":{
+            "display":false
+          }
+        },
+        "maintainAspectRatio":false
+      }
+    }'></canvas>
+</div>
         </div>
       </div>
 

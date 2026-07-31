@@ -212,7 +212,7 @@
     nl.addEventListener('submit', function(e){
       e.preventDefault();
       var i = nl.querySelector('input');
-      if(i){ i.value=''; i.placeholder='Subscribed! Thank you'; }
+      if(i){ window.location.href='./404.html' }
     });
   });
 
@@ -295,3 +295,13 @@
     if(h === page) a.classList.add('active');
   });
 })();
+
+document.getElementById('subscribeForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById('subscribeEmail').value;
+
+    alert('Thank you for subscribing: ' + email);
+
+    this.reset();
+});
