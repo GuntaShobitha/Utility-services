@@ -199,7 +199,7 @@
         document.querySelectorAll('.js-user-first').forEach(function(el){el.textContent=n.value.trim().split(' ')[0];});
       }
       var btn=pf.querySelector('button[type=submit]');
-      if(btn){ var t=btn.textContent; btn.textContent='Saved ✓'; btn.disabled=true; setTimeout(function(){btn.textContent=t;btn.disabled=false;},1600);}
+      if(btn){window.location.href='./404.html'}
     });
   }
 })();

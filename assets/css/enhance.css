@@ -567,7 +567,7 @@ body[data-role] .messages-row .notif-list{max-height:none}
   body[data-role] .dash{grid-template-columns:84px minmax(0,1fr)}
   body[data-role] .dash-side{width:84px;padding:16px 10px;align-items:stretch}
   body[data-role] .dash-side .dash-nav a{justify-content:center;padding:12px 0}
-  body[data-role] .dash-side .dash-nav a span:not(.material-icons-outlined){display:none}
+  body[data-role] .dash-side .dash-nav a span:not(.material-icons-outlined)
   body[data-role] .dash-nav a{font-size:0}
   body[data-role] .dash-nav a .material-icons-outlined{font-size:1.35rem}
   body[data-role] .dash-brand img{height:26px}
