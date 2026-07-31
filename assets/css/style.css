@@ -2355,6 +2355,79 @@ body.no-scroll {
   color: var(--c-muted)
 }
 
+.team-media {
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  position: relative;
+}
+
+.team-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .8s var(--ease-out);
+}
+
+/* Dark overlay */
+.team-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transition: .4s ease;
+  z-index: 1;
+}
+
+/* Social icons container */
+.team-social {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: .4s ease;
+  z-index: 2;
+}
+
+/* Social buttons */
+.team-social a {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #fff;
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: .3s ease;
+}
+
+.team-social a:hover {
+  background: #16a34a;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Hover effects */
+.team-card:hover .team-media::before {
+  opacity: 1;
+}
+
+.team-card:hover .team-social {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-card:hover .team-media img {
+  transform: scale(1.06);
+}
+
 /* PRICING */
 .price-grid {
   display: grid;
